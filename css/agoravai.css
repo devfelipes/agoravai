@@ -2,6 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap');
 
+
+
+:root{
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --cor-azulfraco: #00d2b6;
+    --cor-azulforte: #073B4C;
+    --bg-branco: rgb(255, 255, 255);
+    --corpreto: #000000;
+    --bs-gutter-x: 20rem;
+    --h1-size: 3.8rem;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +23,7 @@
 
 body {
   height: auto;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-montserrat)
 
 }
 
@@ -57,7 +71,7 @@ header {
   height: 20vh;
   box-sizing: border-box;
   z-index: 1;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--bg-branco);
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.022);
 }
@@ -65,9 +79,6 @@ header {
 header img {
   width: auto;
   height: 13vh;
-
-  /* object-fit: cover; */
-  /* object-position: center; */
 }
 
 
@@ -86,7 +97,7 @@ nav {
 
 .nav-links {
   padding-left: 67px;
-  gap: 4rem;
+  gap: 3.5rem;
   list-style: none;
   font-size: 1.5rem;
 }
@@ -94,14 +105,14 @@ nav {
 a {
   font-weight: 500;
   font-size: 1.2rem;
-  color: #004773;
+  color: var(--cor-azulforte);
   text-decoration: none;
-  text-decoration-color: rgb(255, 255, 255);
+  text-decoration-color: var(--bg-branco);
 }
 
 a:hover {
   transition: .5s ease;
-  color: #000000;
+  color: var(--corpreto);
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: rgb(91, 91, 91);
@@ -115,7 +126,7 @@ a:hover {
 }
 
 #local i {
-  color: #002673;
+  color: var(--cor-azulforte);
   font-size: 1.5rem;
 }
 
@@ -130,9 +141,6 @@ main {
 
 
 .container {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  width: 100%;
   padding-right: calc(var(--bs-gutter-x) * .5);
   padding-left: calc(var(--bs-gutter-x) * .5);
   margin-right: auto;
@@ -141,14 +149,14 @@ main {
 
 .rowcontainer {
   display: flex;
+  gap: 2rem;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
 
 }
 
 .columcontainer {
-  max-width: 30.25rem;
   width: 100%;
 
 }
@@ -156,18 +164,19 @@ main {
 
 h1 {
   margin-bottom: 2rem;
-  line-height: 3.2rem;
+  line-height: 3.8rem;
   font-weight: 700;
   font-size:2rem;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  color: rgb(0, 208, 255);
+  color: var(--cor-azulfraco);
 }
 
 #h1top {
-  font-size: 3.5rem;
+  font-size: var(--h1-size);
+    max-width: 33.25rem;
 }
 
 .descricaotop {
@@ -176,10 +185,11 @@ h1 {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  font-family: 'Roboto', sans-serif;
+  font-family:var(--font-roboto);
   font-size: 1.3rem;
-  color: #004256;
+  color: var(--cor-azulforte);
   font-weight: 400;
+    max-width: 30.25rem;
 }
 
 button,
@@ -187,9 +197,9 @@ button,
   padding: 0 1.5rem 0 1.5rem;
   width: auto;
   height: 3.1875rem;
-  border: 0.25rem solid #073b4c;
+  border: 0.25rem solid var(--cor-azulforte);
   border-radius: 2.5rem;
-  background: #073b4c;
+  background: var(--cor-azulforte);
   position: relative;
   margin-top: 2.625rem;
   transition: all .5s ease-out 0s !important;
@@ -197,17 +207,17 @@ button,
 }
 
 button.bt a {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-roboto);
   font-weight: 700;
   font-size: 1rem;
-  color: #fff;
+  color: var(--bg-branco);
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .bt::hover {
 
-  border: 0.25rem solid #167291;
+  border: 0.25rem solid var(--cor-azulforte);
 }
 
 #fotoprincipal {
@@ -223,15 +233,22 @@ section {
 }
 
 .sobrenos {
-  padding-top: 4rem !important;
-  margin-top: 4rem !important;
-  background-color: #162f31;
+  padding-top: 2.5rem !important;
+  margin-top: 2.5rem !important;
+  background-color: var(--cor-azulfraco);
   height: 500px;
 }
 
 .titulo span{
-    font-family: 'Montserrat',sans-serif;
-    font-size: 2rem;
-    color: #fff;
+    font-family: var(--font-roboto);
+    font-size: calc(var(--h1-size) / 2.5);
+    color:var(--corpreto);
     font-weight: 500;
+}
+
+.titulo h2{
+  font-family: var(--font-montserrat);
+  font-size: calc(var(--h1-size));
+  color: var(--bg-branco);
+  font-weight: 500;
 }
